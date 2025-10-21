@@ -4,197 +4,233 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Milka Chakravarthi - Digital Skills & Online Learning</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <style>
-/* GENERAL STYLES - Cyberpunk/Dark Professional Theme */
-body { font-family: 'Roboto', sans-serif; margin:0; padding:0; background-color:#0b0c10; color:#c5c6c7;}
-header { background-color: #1f2833; color:white; padding:20px 0; text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px;}
-header .logo-container { height:100px; margin-bottom:10px;}
-/* IMPORTANT: Ensure these files are in the same directory on GitHub! */
-header .logo-container img { height:100px; width:auto;} 
-header h1 { font-size: 28px; color: #f2c94c; margin: 0;} /* Gold for the main name */
-header p { font-size: 16px; color: #45a29e; margin: 0;} /* Teal/Blue for the tagline */
+/* GENERAL STYLES - Clean, Professional White Theme (like Sorav Jain) */
+body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background-color: #f8f8f8; color: #333;}
+section { padding: 60px 20px; max-width: 1200px; margin: auto; background-color: white;}
+h2 { text-align: center; margin-bottom: 40px; color: #1e90ff; font-weight: 700; font-size: 32px;}
 
-nav { margin:20px 0; text-align:center;}
-nav button { margin:0 10px; padding:10px 20px; border:none; border-radius:5px; cursor:pointer; background-color:#45a29e; color:white; transition:0.3s; font-weight:700;}
-nav button:hover { background-color:#66fcf1; color:#0b0c10;}
-section { padding:40px 20px; max-width:1200px; margin:auto;}
-h2 { text-align:center; margin-bottom:30px; color:#66fcf1;}
-.cards { display:flex; flex-wrap:wrap; justify-content:center; gap:30px;}
-.card { background-color:#1f2833; padding:30px; border-radius:10px; box-shadow:0 0 15px rgba(102, 252, 241, 0.1); width:300px; text-align:center; color:#c5c6c7; border: 1px solid #45a29e;}
-.card h3 { margin-bottom:10px; color:#66fcf1;}
-.card p.description { font-size:14px; margin-bottom:15px; min-height: 40px;}
-.card p.duration { font-size:14px; font-weight:bold; margin-bottom:15px; color:#45a29e;}
-.price { font-size:24px; font-weight:bold; margin-bottom:20px; color:#f2c94c;} /* Gold for Price */
-.enroll-btn { background-color:#45a29e; color:#0b0c10; padding:12px 25px; border:none; border-radius:5px; cursor:pointer; transition:0.3s; font-weight:700;}
-.enroll-btn:hover { background-color:#66fcf1; color:#0b0c10;}
+/* HEADER & NAVIGATION */
+header { background-color: white; padding: 15px 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); display: flex; justify-content: space-between; align-items: center;}
+header .logo-area { display: flex; align-items: center; text-decoration: none;}
+header .logo-area img { height: 40px; margin-right: 10px;}
+header .logo-area h1 { font-size: 24px; color: #333; margin: 0; font-weight: 700;}
+header nav a { text-decoration: none; color: #555; margin-left: 25px; font-weight: 600; transition: color 0.3s;}
+header nav a:hover { color: #1e90ff;}
+.menu-icon { display: none; font-size: 24px; cursor: pointer;}
 
-/* MODAL */
-.modal { display: none; position: fixed; z-index: 1000; padding-top: 50px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.9);}
-.modal-content { background-color: #1f2833; color:white; margin: auto; padding: 20px; border-radius: 10px; width: 90%; max-width: 700px; box-shadow: 0 0 20px rgba(102, 252, 241, 0.3);}
-.close { color: #66fcf1; float: right; font-size: 36px; font-weight: bold; cursor: pointer;}
-.close:hover, .close:focus { color: #fff; text-decoration: none;}
+/* HERO SECTION - Similar to Sorav Jain's landing page */
+.hero { background-color: #eaf5ff; padding: 80px 20px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 40px;}
+.hero .text-content { max-width: 500px;}
+.hero .text-content h3 { color: #1e90ff; font-size: 18px; margin-bottom: 10px;}
+.hero .text-content h2 { text-align: left; font-size: 48px; color: #333; margin: 0 0 20px 0; line-height: 1.2;}
+.hero .text-content p { font-size: 18px; color: #555; margin-bottom: 30px;}
+.hero .cta-btn { background-color: #1e90ff; color: white; padding: 14px 30px; border-radius: 5px; text-decoration: none; font-weight: 700; font-size: 18px; transition: background-color 0.3s;}
+.hero .cta-btn:hover { background-color: #167bc2;}
+.hero .image-content img { width: 100%; max-width: 450px; height: auto; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);}
 
-/* WhatsApp Floating Button */
-.whatsapp-btn { position: fixed; bottom: 30px; right: 30px; background-color: #25D366; color: white; border-radius:50%; width: 50px; height: 50px; font-size:24px; z-index:1001; display:flex; align-items:center; justify-content:center; text-decoration:none; box-shadow: 0 0 10px rgba(37, 211, 102, 0.8);}
+/* ABOUT SECTION - Structured text block */
+.about { background-color: white; border-top: 1px solid #eee;}
+.about .bio { max-width: 900px; margin: auto; text-align: center;}
+.about .bio h3 { color: #333; font-size: 28px; margin-bottom: 20px;}
+.about .bio p { font-size: 16px; line-height: 1.7; color: #555; margin-bottom: 20px;}
+.about .highlights { display: flex; justify-content: center; gap: 30px; margin-top: 30px;}
+.about .highlight-item { background: #f0f0f0; padding: 10px 20px; border-radius: 5px; font-weight: 600; color: #1e90ff;}
 
-/* Language Tabs */
-.language-tabs { text-align:center; margin-bottom:30px;}
-.language-tabs button { margin:0 5px; padding:8px 16px; border-radius:5px; border:none; background:#45a29e; color:white; cursor:pointer;}
-.language-tabs button:hover { background:#66fcf1;}
+/* COURSES / CARDS - Clean Grid Layout */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; justify-content: center;}
+.card { background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); border-top: 5px solid #ffc107; transition: transform 0.3s;}
+.card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.15);}
+.card h3 { margin-bottom: 10px; color: #333; font-size: 22px;}
+.card p.description { font-size: 15px; margin-bottom: 15px; min-height: 40px; color: #777;}
+.card p.duration { font-size: 15px; font-weight: bold; margin-bottom: 15px; color: #1e90ff;}
+.price { font-size: 28px; font-weight: 700; margin-bottom: 20px; color: #ffc107;} /* Gold/Orange for Price */
+.enroll-btn { background-color: #1e90ff; color: white; padding: 12px 25px; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s; font-weight: 600;}
+.enroll-btn:hover { background-color: #167bc2;}
 
-/* Dashboard */
-.dashboard { background-color:#1f2833; padding:40px; border-radius:10px; box-shadow:0 0 10px #45a29e; margin-top:40px;}
-.dashboard ul { list-style: none; padding: 0; text-align: left; max-width: 400px; margin: 20px auto;}
-.dashboard ul li { background: #0b0c10; padding: 10px; margin-bottom: 10px; border-left: 3px solid #66fcf1; border-radius: 3px;}
-
-/* About Me */
-.about { display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:30px; background-color:#1f2833; padding:40px 20px; border-radius:10px; margin-bottom:50px; border-left: 5px solid #66fcf1;}
-.about img { width:200px; height:200px; object-fit: cover; border-radius:50%; border:5px solid #f2c94c; box-shadow: 0 0 10px #f2c94c;}
-.about .bio { max-width:600px;}
-.about .bio h3 { color:#66fcf1; margin-bottom:15px; font-size: 24px;}
-
-/* Testimonials Specific Styles */
+/* TESTIMONIALS */
 .testimonial-card {
-    background-color: #0b0c10; /* Darker background for contrast */
-    border: 1px solid #66fcf1;
-    box-shadow: 0 0 10px rgba(102, 252, 241, 0.2);
-    padding: 25px;
-    width: 350px; /* Slightly wider for longer text */
+    border-top: 5px solid #1e90ff;
     text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Pushes name to bottom */
+}
+.testimonial-card .rating {
+    color: #ffc107; /* Gold stars */
+    margin-bottom: 10px;
+    font-size: 1.2em;
 }
 .testimonial-card p.quote {
     font-style: italic;
     font-size: 16px;
     margin-bottom: 20px;
-    color: #c5c6c7;
+    color: #555;
     line-height: 1.6;
 }
 .testimonial-card .student-info {
-    font-weight: bold;
-    color: #f2c94c; /* Gold for names */
+    font-weight: 600;
+    color: #1e90ff;
     font-size: 15px;
     text-align: right;
-    margin-top: auto; /* Pushes info to the bottom */
-}
-.testimonial-card .rating {
-    color: #f2c94c; /* Gold stars */
-    margin-bottom: 10px;
-    font-size: 1.2em;
+    margin-top: auto;
 }
 
+/* FOOTER */
+footer { background-color: #333; color: white; text-align: center; padding: 20px; font-size: 14px;}
+.whatsapp-btn { position: fixed; bottom: 30px; right: 30px; background-color: #25D366; color: white; border-radius: 50%; width: 55px; height: 55px; font-size: 28px; z-index: 1001; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.5);}
+
+/* MODAL (unchanged, but styled for the new theme) */
+.modal { display: none; position: fixed; z-index: 1000; padding-top: 50px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.8);}
+.modal-content { background-color: #fff; color:#333; margin: auto; padding: 20px; border-radius: 10px; width: 90%; max-width: 700px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);}
+.close { color: #333; float: right; font-size: 36px; font-weight: bold; cursor: pointer;}
+.close:hover, .close:focus { color: #1e90ff;}
+
 /* Media Queries for responsiveness */
-@media (max-width: 768px) {
-    .cards { flex-direction: column; align-items: center;}
-    .card, .testimonial-card { width: 90%;}
-    .about { flex-direction: column; text-align: center;}
-    .about img { margin-bottom: 20px;}
-    header h1 { font-size: 24px;}
-    header p { font-size: 14px;}
+@media (max-width: 900px) {
+    .hero { text-align: center; flex-direction: column;}
+    .hero .text-content h2 { font-size: 36px; text-align: center;}
+    .hero .image-content { order: -1;} /* Image on top on mobile */
+    .about .highlights { flex-direction: column; align-items: center;}
+    header nav { display: none; width: 100%; flex-direction: column; background: white; position: absolute; top: 70px; left: 0; padding: 10px 0; box-shadow: 0 4px 4px rgba(0,0,0,0.05);}
+    header nav a { margin: 10px 0; padding: 10px 20px; border-bottom: 1px solid #eee; width: 100%; text-align: center;}
+    .menu-icon { display: block;}
+    .active { display: flex !important;}
 }
 </style>
 </head>
 <body>
 
 <header>
-    <div class="logo-container">
-        <img src="milka.jpg" alt="Milka Chakravarthi Logo - Digital Path to Success">
+    <a href="#" class="logo-area">
+        <img src="Gemini_Generated_Image_52ti3n52ti3n52ti.png" alt="Milka Chakravarthi Logo">
+        <h1>Milka Chakravarthi</h1>
+    </a>
+    <nav id="navbar">
+        <a href="#about">About</a>
+        <a href="#courses">Courses</a>
+        <a href="#mentorship">Mentorship</a>
+        <a href="#testimonials">Testimonials</a>
+    </nav>
+    <div class="menu-icon" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
     </div>
-    <h1>Milka Chakravarthi</h1>
-    <p>Digital Skills & Online Learning</p>
 </header>
 
-<nav class="language-tabs">
-    <button>Tamil</button>
-    <button>Kannada</button>
-    <button>Telugu</button>
-    <button>English</button>
-</nav>
-
-<section class="about">
-    <img src="milkaphoto.jpg" alt="Milka Chakravarthi">
-    <div class="bio">
-        <h3>About Milka Chakravarthi</h3>
-        <p>Hello! I’m Milka Chakravarthi, a passionate digital skills trainer and mentor with over 7 years of experience in software engineering and freelancing. My mission is to empower **housewives, students, and working professionals** to achieve financial independence by learning high-demand digital skills in their regional languages—**Tamil, Kannada, Telugu, and English.**</p>
-        <p>I specialize in freelancing, affiliate marketing, digital marketing, web development, and creative tools like Canva. Through my mentorship programs and courses, I focus on providing practical, hands-on training that helps learners build confidence, acquire real-world skills, and start earning online effectively.</p>
-        <p>My approach combines **clarity, simplicity, and actionable guidance**, ensuring that every student gains not just knowledge but results they can apply immediately. Join me to transform your skills into a rewarding online career! 🚀</p>
+<section class="hero">
+    <div class="text-content">
+        <h3>Certified Digital Skills Mentor</h3>
+        <h2>Learn High-Income Digital Skills in Your Regional Language.</h2>
+        <p>Unlock your financial independence through practical, real-world training in **Freelancing, Web Development, and Digital Marketing** in Tamil, Kannada, Telugu, and English.</p>
+        <a href="#courses" class="cta-btn">View All Courses <i class="fas fa-arrow-right"></i></a>
+    </div>
+    <div class="image-content">
+        <img src="milka.jpg.jpg" alt="Milka Chakravarthi - Digital Skills Trainer">
     </div>
 </section>
 
-<section>
+<section class="about" id="about">
+    <div class="bio">
+        <h2>About Milka Chakravarthi</h2>
+        <p>Hello! I’m Milka Chakravarthi, a passionate digital skills trainer and mentor with over **7 years of experience** in software engineering and freelancing. My mission is to empower **housewives, students, and working professionals** to achieve financial independence.</p>
+        <p>I specialize in **freelancing, affiliate marketing, digital marketing, web development, and creative tools like Canva**. My approach combines **clarity, simplicity, and actionable guidance**, ensuring every student gains not just knowledge but results they can apply immediately. 🚀</p>
+        <div class="highlights">
+            <div class="highlight-item"><i class="fas fa-graduation-cap"></i> 7+ Years Experience</div>
+            <div class="highlight-item"><i class="fas fa-language"></i> Regional Language Support</div>
+            <div class="highlight-item"><i class="fas fa-money-bill-wave"></i> Focus on Income Generation</div>
+        </div>
+    </div>
+</section>
+
+<section id="courses">
     <h2>Recorded Courses - Learn at Your Pace 📚</h2>
     <div class="cards">
         <div class="card">
             <h3>Meta Ads Mastery</h3>
-            <p class="description">Learn to create and optimize Facebook & Instagram ads to drive real results for businesses of any size.</p>
-            <p class="duration">Duration: 4 Weeks | Videos + Resources</p>
+            <p class="description">Create and optimize Facebook & Instagram ads to drive real results for businesses of any size.</p>
+            <p class="duration"><i class="far fa-clock"></i> Duration: 4 Weeks | Videos + Resources</p>
             <p class="price">₹3,999</p>
             <button class="enroll-btn" onclick="openFormModal()">Enroll Now</button>
         </div>
         <div class="card">
             <h3>Canva Pro Design</h3>
             <p class="description">Master Canva Pro to design stunning social media posts, banners, and presentations effortlessly.</p>
-            <p class="duration">Duration: 3 Weeks | Practical Projects</p>
+            <p class="duration"><i class="far fa-clock"></i> Duration: 3 Weeks | Practical Projects</p>
             <p class="price">₹3,999</p>
             <button class="enroll-btn" onclick="openFormModal()">Enroll Now</button>
         </div>
         <div class="card">
             <h3>Full Digital Marketing</h3>
             <p class="description">Comprehensive training on SEO, social media, email marketing, and content strategies for online growth.</p>
-            <p class="duration">Duration: 5 Weeks | Certification</p>
+            <p class="duration"><i class="far fa-clock"></i> Duration: 5 Weeks | Certification</p>
             <p class="price">₹3,999</p>
             <button class="enroll-btn" onclick="openFormModal()">Enroll Now</button>
         </div>
         <div class="card">
             <h3>Web Development (MERN)</h3>
             <p class="description">Learn HTML, CSS, JavaScript, and React to build responsive websites and web applications from scratch.</p>
-            <p class="duration">Duration: 6 Months | Portfolio Ready</p>
-            <p class="price">₹4,999</p>
+            <p class="duration"><i class="far fa-clock"></i> Duration: 6 Months | Portfolio Ready</p>
+            <p class="price">₹3,999</p>
             <button class="enroll-btn" onclick="openFormModal()">Enroll Now</button>
         </div>
         <div class="card">
             <h3>C / C++ / Java Core</h3>
             <p class="description">Gain solid programming skills in C, C++, and Java with practical projects for real-world applications.</p>
-            <p class="duration">Duration: 6 Months | Fundamentals to Advanced</p>
-            <p class="price">₹4,999</p>
+            <p class="duration"><i class="far fa-clock"></i> Duration: 6 Months | Fundamentals to Advanced</p>
+            <p class="price">₹3,999</p>
             <button class="enroll-btn" onclick="openFormModal()">Enroll Now</button>
         </div>
         <div class="card">
             <h3>Automation Testing (Selenium)</h3>
             <p class="description">Learn Selenium, Java, and Test Automation frameworks to build career-ready automation skills.</p>
-            <p class="duration">Duration: 6 Months | Industry Aligned</p>
-            <p class="price">₹4,999</p>
+            <p class="duration"><i class="far fa-clock"></i> Duration: 6 Months | Industry Aligned</p>
+            <p class="price">₹3,999</p>
             <button class="enroll-btn" onclick="openFormModal()">Enroll Now</button>
         </div>
         <div class="card">
             <h3>Video Editing Pro</h3>
             <p class="description">Master video editing with tools like Filmora and Adobe Premiere to create engaging content.</p>
-            <p class="duration">Duration: 4 Weeks | Content Creation Skills</p>
-            <p class="price">₹3,999</p>
-            <button class="enroll-btn" onclick="openFormModal()">Enroll Now</button>
-        </div>
-        <div class="card">
-            <h3>Social Media Marketing (SMM)</h3>
-            <p class="description">Learn Social Media Marketing strategies to grow audiences, increase engagement, and generate leads.</p>
-            <p class="duration">Duration: 4 Weeks | Strategy & Execution</p>
+            <p class="duration"><i class="far fa-clock"></i> Duration: 4 Weeks | Content Creation Skills</p>
             <p class="price">₹3,999</p>
             <button class="enroll-btn" onclick="openFormModal()">Enroll Now</button>
         </div>
         <div class="card">
             <h3>Affiliate Marketing Success</h3>
             <p class="description">Step-by-step guidance to earn commissions online through affiliate marketing strategies and tools.</p>
-            <p class="duration">Duration: 5 Weeks | Passive Income</p>
+            <p class="duration"><i class="far fa-clock"></i> Duration: 5 Weeks | Passive Income</p>
             <p class="price">₹3,999</p>
             <button class="enroll-btn" onclick="openFormModal()">Enroll Now</button>
         </div>
     </div>
 </section>
 
-<section>
+<section id="mentorship">
+    <h2>Exclusive Mentorship Programs ✨</h2>
+    <div class="cards">
+        <div class="card" style="border-top: 5px solid #1e90ff;">
+            <h3>Non-Tech Mentorship</h3>
+            <p class="description">6 months guided mentorship to build your skills and earn online **without** a technical background. Includes live Q&A.</p>
+            <p class="duration"><i class="far fa-clock"></i> Duration: 6 Months | Personalized Guidance</p>
+            <p class="price">₹14,999</p>
+            <button class="enroll-btn" onclick="openFormModal()">Enroll Now</button>
+        </div>
+        <div class="card" style="border-top: 5px solid #1e90ff;">
+            <h3>Tech Mentorship (Intensive)</h3>
+            <p class="description">6 months intensive mentorship for advanced tech courses (Web Dev, Automation Testing, Java, C/C++). Portfolio building focus.</p>
+            <p class="duration"><i class="far fa-clock"></i> Duration: 6 Months | Career Ready</p>
+            <p class="price">₹30,000</p>
+            <button class="enroll-btn" onclick="openFormModal()">Enroll Now</button>
+        </div>
+        <div class="card">
+            <h3>All-Access Bundle</h3>
+            <p class="description">Get **lifetime access** to all recorded courses and **Mentorship Programs** with exclusive bonuses and support.</p>
+            <p class="duration"><i class="fas fa-unlock"></i> Access: Lifetime | All Courses + Mentorship</p>
+            <p class="price">Contact for Price</p>
+            <button class="enroll-btn" onclick="openFormModal()">Inquire Now</button>
+        </div>
+    </div>
+</section>
+
+<section id="testimonials">
     <h2>What Our Students Say ✨</h2>
     <div class="cards">
         <div class="card testimonial-card">
@@ -209,75 +245,15 @@ h2 { text-align:center; margin-bottom:30px; color:#66fcf1;}
         </div>
         <div class="card testimonial-card">
             <div class="rating">★★★★★</div>
-            <p class="quote">"I never thought I could master Canva Pro, but Milka's course made it so simple and fun. Now I create all my social media graphics and even take small design gigs!"</p>
-            <p class="student-info">- Anjali V., Hyderabad (Entrepreneur)</p>
-        </div>
-        <div class="card testimonial-card">
-            <div class="rating">★★★★★</div>
-            <p class="quote">"The tech mentorship pushed me to achieve my potential in Automation Testing. The real-time project experience and Milka's guidance were invaluable."</p>
-            <p class="student-info">- Suresh K., Pune (Software Tester)</p>
-        </div>
-        <div class="card testimonial-card">
-            <div class="rating">★★★★★</div>
-            <p class="quote">"As a beginner, Digital Marketing felt overwhelming, but Milka broke it down perfectly. I now understand SEO and social media strategy much better!"</p>
-            <p class="student-info">- Deepa M., Coimbatore (Small Business Owner)</p>
-        </div>
-        <div class="card testimonial-card">
-            <div class="rating">★★★★★</div>
             <p class="quote">"The flexibility of learning C++ in my own language was a game-changer. It allowed me to grasp complex concepts without any language barrier."</p>
             <p class="student-info">- Rahul P., Kochi (College Student)</p>
         </div>
     </div>
 </section>
-<section>
-    <h2>Exclusive Mentorship Programs ✨</h2>
-    <div class="cards">
-        <div class="card">
-            <h3>Non-Tech Mentorship</h3>
-            <p class="description">6 months guided mentorship to build your skills and earn online **without** a technical background. Includes live Q&A.</p>
-            <p class="duration">Duration: 6 Months | Personalized Guidance</p>
-            <p class="price">₹14,999</p>
-            <button class="enroll-btn" onclick="openFormModal()">Enroll Now</button>
-        </div>
-        <div class="card">
-            <h3>Tech Mentorship (Intensive)</h3>
-            <p class="description">6 months intensive mentorship for advanced tech courses (Web Dev, Automation Testing, Java, C/C++). Portfolio building focus.</p>
-            <p class="duration">Duration: 6 Months | Career Ready</p>
-            <p class="price">₹30,000</p>
-            <button class="enroll-btn" onclick="openFormModal()">Enroll Now</button>
-        </div>
-    </div>
-</section>
 
-<section>
-    <h2>Premium Bundles - Best Value 💎</h2>
-    <div class="cards">
-        <div class="card">
-            <h3>All-Access Bundle</h3>
-            <p class="description">Get **lifetime access** to all recorded courses and **Mentorship Programs** with exclusive bonuses and support.</p>
-            <p class="duration">Access: Lifetime | All Courses + Mentorship</p>
-            <p class="price">Contact for Price</p>
-            <button class="enroll-btn" onclick="openFormModal()">Inquire Now</button>
-        </div>
-        <div class="card">
-            <h3>Premium Bundle (VIP)</h3>
-            <p class="description">Includes **All-Access Bundle** features plus **1-on-1 personalized coaching** sessions for maximum, accelerated results.</p>
-            <p class="duration">Access: Lifetime + Dedicated 1-on-1</p>
-            <p class="price">Contact for Price</p>
-            <button class="enroll-btn" onclick="openFormModal()">Inquire Now</button>
-        </div>
-    </div>
-</section>
-
-<section class="dashboard">
-    <h2>Student Dashboard Preview 🧑‍💻</h2>
-    <p>Welcome to your digital hub! Track your courses, progress, and upcoming mentorship sessions here.</p>
-    <ul>
-        <li>**Course Progress Bar:** Visualizing your learning journey.</li>
-        <li>**Upcoming Sessions:** Schedule for live mentorship and Q&A.</li>
-        <li>**Completed Courses:** Your certificates and achievements.</li>
-    </ul>
-</section>
+<footer>
+    &copy; 2025 Milka Chakravarthi. All Rights Reserved.
+</footer>
 
 <div id="formModal" class="modal">
     <div class="modal-content">
@@ -291,19 +267,24 @@ h2 { text-align:center; margin-bottom:30px; color:#66fcf1;}
 </a>
 
 <script>
+// Modal Functions
 function openFormModal() { 
     document.getElementById("formModal").style.display = "block"; 
 }
 function closeFormModal() { 
     document.getElementById("formModal").style.display = "none"; 
 }
-
-// Close the modal if the user clicks anywhere outside of it
 window.onclick = function(event) {
     const modal = document.getElementById("formModal");
     if (event.target == modal) { 
         modal.style.display = "none"; 
     }
+}
+
+// Mobile Menu Toggle
+function toggleMenu() {
+    const navbar = document.getElementById("navbar");
+    navbar.classList.toggle("active");
 }
 </script>
 
